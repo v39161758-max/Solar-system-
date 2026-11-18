@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>SOLAR SYSTEM 3D: Galactic Flyer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="spaceCanvas"></canvas>
+
+  <!-- PERMANENT COMMANDER IDENTITY & CREDITS BAR -->
+  <header id="command-header">
+    <div class="profile-chip" id="editCallsign">
+      <div class="avatar-dot" id="headerAvatar">V</div>
+      <div>
+        <div id="commanderName" class="p-name">CMDR. VISHAL</div>
+        <div id="commanderRank" class="p-rank">LEVEL 1 • CADET</div>
+      </div>
+    </div>
+    <div class="wallet-chip"><span>💎 <b id="creditBalance">600</b></span></div>
+  </header>
+
+  <!-- PAGE 1: 3D SPACECRAFT HANGAR & HULL PAINT -->
+  <section id="page-hangar" class="screen active">
+    <div class="spacer"></div>
+    <div class="bottom-card">
+      <div class="nav-row">
+        <button id="prevShip" class="round-btn">◀</button>
+        <div class="info-center">
+          <span id="shipClass" class="sub-tag">ORBITAL INTERCEPTOR</span>
+          <h2 id="shipName">ISRO VIKRAM-X</h2>
+          <p id="shipSpecs">Warp Speed: 28,000 km/h • Agility: 90%</p>
+        </div>
+        <button id="nextShip" class="round-btn">▶</button>
+      </div>
+      <div class="paint-row">
+        <span>HULL COATING:</span>
+        <div id="hullSwatches" class="swatches"></div>
+      </div>
+      <button id="shipActionBtn" class="btn-primary">SELECT CRAFT & CONTINUE ➔</button>
+    </div>
+  </section>
+
+  <!-- PAGE 2: ASTRONAUT PILOT ROSTER -->
+  <section id="page-pilots" class="screen">
+    <div class="top-nav">
+      <button id="backHangar" class="btn-ghost">⬅ HANGAR</button>
+      <span class="page-label">ASTRONAUT ROSTER</span>
+    </div>
+    <div class="bottom-card">
+      <div class="nav-row">
+        <button id="prevPilot" class="round-btn">◀</button>
+        <div class="info-center">
+          <span id="pilotRole" class="sub-tag">FLIGHT CADET</span>
+          <h2 id="pilotName">ARYAN (ACTIVE)</h2>
+          <p id="pilotPerk">Suit Perk: Balanced Thruster Telemetry</p>
+        </div>
+        <button id="nextPilot" class="round-btn">▶</button>
+      </div>
+      <button id="pilotActionBtn" class="btn-primary">CONFIRM PILOT ➔</button>
+    </div>
+  </section>
+
+  <!-- PAGE 3: SOLAR SYSTEM SECTOR SELECTOR -->
+  <section id="page-sectors" class="screen">
+    <div class="top-nav">
+      <button id="backPilots" class="btn-ghost">⬅ PILOTS</button>
+      <span class="page-label">SOLAR SECTORS</span>
+    </div>
+    <div class="sector-container">
+      <div id="sectorGrid" class="sector-grid"></div>
+      <button id="launchMissionBtn" class="btn-launch">🚀 LAUNCH INTO ORBIT</button>
+    </div>
+  </section>
+
+  <!-- PAGE 4: 3D SPACE FLIGHT COCKPIT -->
+  <section id="page-flight" class="screen">
+    <div class="flight-hud">
+      <div class="hud-pill">LIGHT-KM<br><span id="hudDist">0</span></div>
+      <div class="hud-pill">CREDITS<br>💎<span id="hudCredits">0</span></div>
+      <div class="hud-pill">VELOCITY<br><span id="hudSpeed">0</span>k</div>
+      <button id="camToggleBtn" class="cam-btn">📷</button>
+    </div>
+
+    <div class="flight-controls">
+      <div class="dpad-cluster">
+        <button id="upBtn" class="fly-btn">▲</button>
+        <div class="lr-row">
+          <button id="leftBtn" class="fly-btn">◀</button>
+          <button id="downBtn" class="fly-btn">▼</button>
+          <button id="rightBtn" class="fly-btn">▶</button>
+        </div>
+      </div>
+      <div class="action-cluster">
+        <button id="fireBtn" class="btn-laser">⚡<br>LASER</button>
+        <button id="brakeBtn" class="btn-retro">🛑<br>RETRO</button>
+        <button id="boostBtn" class="btn-warp">🔥<br>WARP</button>
+      </div>
+    </div>
+
+    <div id="missionModal" class="modal hidden">
+      <h1 id="modalTitle">HULL BREACHED!</h1>
+      <p id="modalSummary">Distance: 0 km | Earned: 💎0</p>
+      <p id="modalXP" class="xp-text">+60 XP GAINED!</p>
+      <div class="modal-actions">
+        <button id="relaunchBtn" class="btn-launch">RELAUNCH MISSION</button>
+        <button id="returnHangarBtn" class="btn-ghost">RETURN TO HANGAR</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="game.js"></script>
+</body>
+    </html>
+    
